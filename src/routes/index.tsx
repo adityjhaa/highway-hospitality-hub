@@ -9,6 +9,8 @@ import restaurantAsset from "@/assets/restaurant.jpg.asset.json";
 import room1Img from "@/assets/room1.jpg";
 import room2Img from "@/assets/room2.jpg";
 import room3Img from "@/assets/room3.jpg";
+import cottage1Img from "@/assets/cottage1.jpg";
+import cottage2Img from "@/assets/cottage2.jpg";
 import barAsset from "@/assets/bar.jpg.asset.json";
 import conferenceAsset from "@/assets/conference.jpg.asset.json";
 import gardenAsset from "@/assets/garden.jpg.asset.json";
@@ -18,6 +20,8 @@ const restaurantImg = restaurantAsset.url;
 const room1 = room1Img;
 const room2 = room2Img;
 const room3 = room3Img;
+const cottage1 = cottage1Img;
+const cottage2 = cottage2Img;
 const barImg = barAsset.url;
 const banquetImg = conferenceAsset.url;
 const gardenImg = gardenAsset.url;
@@ -138,9 +142,9 @@ function Hero() {
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/15 rounded-2xl overflow-hidden border border-white/15 max-w-3xl mx-auto backdrop-blur-sm">
             {[
             { n: "20", l: "Rooms" },
+            { n: "8", l: "Garden Cottages" },
             { n: "500", l: "Banquet Capacity" },
             { n: "24/7", l: "Service" },
-            { n: "4.6★", l: "Guest Rating" },
           ].map(s => (
             <div key={s.l} className="bg-charcoal/40 p-5 text-center">
               <div className="font-display text-2xl md:text-3xl text-gold">{s.n}</div>
@@ -211,9 +215,11 @@ function About() {
 }
 
 const ROOMS = [
-  { img: room1, name: "Deluxe Room", desc: "Plush king bed, elegant interiors with garden views — perfect for couples and business travellers.", amen: ["King Bed", "Free Wi-Fi", "AC", "TV", "Breakfast"], occ: "2 Adults" },
-  { img: room2, name: "Cottage", desc: "Private standalone cottage with veranda surrounded by lush greenery — ideal for a peaceful retreat.", amen: ["King Bed", "Private Veranda", "Garden View", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
-  { img: room3, name: "Deluxe Room (Twin)", desc: "Spacious deluxe room with twin beds and balcony overlooking the gardens — great for families or friends.", amen: ["Twin Beds", "Balcony", "Wi-Fi", "AC", "Breakfast"], occ: "3 Adults" },
+const ROOMS = [
+  { img: cottage1, name: "Garden Cottage", desc: "One of our 8 private standalone cottages with a wooden veranda, framed by palms and tropical gardens — a peaceful, resort-style retreat.", amen: ["King Bed", "Private Veranda", "Garden View", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
+  { img: room1, name: "Deluxe Room", desc: "Plush king bed and elegant interiors opening to lush garden views — ideal for couples and business travellers.", amen: ["King Bed", "Free Wi-Fi", "AC", "TV", "Breakfast"], occ: "2 Adults" },
+  { img: cottage2, name: "Premium Cottage", desc: "Spacious cottage interior with vaulted wood-beam ceiling and French doors opening onto a private green patio.", amen: ["King Bed", "Patio", "Wi-Fi", "AC", "Breakfast"], occ: "2 Adults + 1 Child" },
+  { img: room3, name: "Deluxe Room (Twin)", desc: "Spacious deluxe with twin beds and balcony overlooking the gardens — great for families or friends.", amen: ["Twin Beds", "Balcony", "Wi-Fi", "AC", "Breakfast"], occ: "3 Adults" },
 ];
 
 function Rooms() {
@@ -408,9 +414,10 @@ function Reviews() {
 const GALLERY = [
   { src: hero, h: "h-80", cat: "Resort Exterior" },
   { src: gardenImg, h: "h-64", cat: "Gardens" },
+  { src: cottage1, h: "h-80", cat: "Garden Cottage" },
   { src: poolImg, h: "h-72", cat: "Pool" },
   { src: room1, h: "h-56", cat: "Deluxe Room" },
-  { src: room2, h: "h-80", cat: "Cottage" },
+  { src: cottage2, h: "h-72", cat: "Cottage Interior" },
   { src: room3, h: "h-56", cat: "Deluxe Room" },
   { src: restaurantImg, h: "h-72", cat: "Restaurant" },
   { src: barImg, h: "h-64", cat: "Bar" },
