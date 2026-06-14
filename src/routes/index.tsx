@@ -4,14 +4,33 @@ import {
   Phone, MessageCircle, MapPin, Mail, Clock, Users, Bed, Utensils, Wine, PartyPopper,
   Star, ChevronRight, Menu, X, Calendar,
 } from "lucide-react";
-import hero from "@/assets/hero.jpg";
-import roomImg from "@/assets/room.jpg";
-import suiteImg from "@/assets/suite.jpg";
-import restaurantImg from "@/assets/restaurant.jpg";
-import barImg from "@/assets/bar.jpg";
-import banquetImg from "@/assets/banquet.jpg";
-import food1 from "@/assets/food1.jpg";
-import exteriorImg from "@/assets/exterior.jpg";
+import heroAsset from "@/assets/hero.jpg.asset.json";
+import exteriorAsset from "@/assets/exterior.jpg.asset.json";
+import exterior2Asset from "@/assets/exterior2.jpg.asset.json";
+import facadeAsset from "@/assets/facade.jpg.asset.json";
+import restaurantAsset from "@/assets/restaurant.jpg.asset.json";
+import interiorAsset from "@/assets/interior.jpg.asset.json";
+import food1Asset from "@/assets/food1.jpg.asset.json";
+import food2Asset from "@/assets/food2.jpg.asset.json";
+import food3Asset from "@/assets/food3.jpg.asset.json";
+import roomImgLocal from "@/assets/room.jpg";
+import suiteImgLocal from "@/assets/suite.jpg";
+import barImgLocal from "@/assets/bar.jpg";
+import banquetImgLocal from "@/assets/banquet.jpg";
+
+const hero = heroAsset.url;
+const exteriorImg = exteriorAsset.url;
+const exterior2 = exterior2Asset.url;
+const facadeImg = facadeAsset.url;
+const restaurantImg = restaurantAsset.url;
+const interiorImg = interiorAsset.url;
+const food1 = food1Asset.url;
+const food2 = food2Asset.url;
+const food3 = food3Asset.url;
+const roomImg = roomImgLocal;
+const suiteImg = suiteImgLocal;
+const barImg = barImgLocal;
+const banquetImg = banquetImgLocal;
 
 export const Route = createFileRoute("/")({
   head: () => ({
