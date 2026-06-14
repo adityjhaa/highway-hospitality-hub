@@ -297,9 +297,9 @@ function Restaurant() {
           </div>
         </div>
         <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-          <img src={restaurantImg} alt="Restaurant interior" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-soft w-full h-72 object-cover col-span-2" />
-          <img src={gardenImg} alt="Resort garden surroundings" width={1280} height={960} loading="lazy" className="rounded-2xl shadow-soft w-full h-48 object-cover" />
-          <img src={poolImg} alt="Poolside seating" width={1280} height={960} loading="lazy" className="rounded-2xl shadow-soft w-full h-48 object-cover" />
+          <img src={restaurantReal} alt="Astha Midway restaurant interior" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-soft w-full h-72 object-cover col-span-2" />
+          <img src={trainRestaurant} alt="Train-themed family dining experience" width={1280} height={960} loading="lazy" className="rounded-2xl shadow-soft w-full h-48 object-cover" />
+          <img src={babycornImg} alt="Crispy chilli babycorn served at Astha Midway" width={1280} height={960} loading="lazy" className="rounded-2xl shadow-soft w-full h-48 object-cover" />
         </div>
       </div>
     </section>
@@ -311,7 +311,7 @@ function Bar() {
     <section id="bar" className="py-24 px-4 sm:px-6 bg-charcoal text-primary-foreground relative overflow-hidden">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <img src={barImg} alt="Premium bar" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover" />
+          <img src={mocktailImg} alt="Signature mocktail from Astha Midway bar" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover" />
         </div>
         <div>
           <div className="text-xs tracking-[0.25em] uppercase text-gold font-medium mb-3">— The Bar —</div>
@@ -342,7 +342,7 @@ function Banquet() {
         <SectionHeader kicker="Banquet & Events" title="Where celebrations come alive" sub="A grand hall, elegant decor and end-to-end coordination — built for weddings, receptions, corporate events and every milestone in between." />
         <div className="grid lg:grid-cols-5 gap-8">
           <div className="lg:col-span-3 relative rounded-3xl overflow-hidden shadow-luxe">
-            <img src={banquetImg} alt="Banquet hall" width={1600} height={1066} loading="lazy" className="w-full h-full min-h-[450px] object-cover" />
+            <img src={conferenceReal} alt="Conference and banquet hall at Astha Midway" width={1600} height={1066} loading="lazy" className="w-full h-full min-h-[450px] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -391,7 +391,7 @@ function Banquet() {
   );
 }
 
-function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
+function Input(props: InputHTMLAttributes<HTMLInputElement>) {
   return <input {...props} className="w-full px-4 py-3 rounded-xl border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring" />;
 }
 
@@ -424,14 +424,16 @@ function Reviews() {
 
 const GALLERY = [
   { src: hero, h: "h-80", cat: "Resort Exterior" },
-  { src: gardenImg, h: "h-64", cat: "Gardens" },
+  { src: restaurantReal, h: "h-72", cat: "Restaurant Interior" },
   { src: cottage1, h: "h-80", cat: "Garden Cottage" },
-  { src: poolImg, h: "h-72", cat: "Pool" },
+  { src: trainRestaurant, h: "h-72", cat: "Train Dining" },
   { src: room1, h: "h-56", cat: "Deluxe Room" },
   { src: cottage2, h: "h-72", cat: "Cottage Interior" },
   { src: room3, h: "h-56", cat: "Deluxe Room" },
-  { src: restaurantImg, h: "h-72", cat: "Restaurant" },
-  { src: barImg, h: "h-64", cat: "Bar" },
+  { src: noodlesImg, h: "h-72", cat: "Restaurant Cuisine" },
+  { src: mocktailImg, h: "h-64", cat: "Bar Mocktail" },
+  { src: conferenceReal, h: "h-72", cat: "Conference Hall" },
+  { src: babycornImg, h: "h-64", cat: "Signature Starter" },
 ];
 
 function Gallery() {
