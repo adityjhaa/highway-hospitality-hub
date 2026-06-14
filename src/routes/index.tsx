@@ -416,13 +416,13 @@ function Reviews() {
 
 const GALLERY = [
   { src: hero, h: "h-80", cat: "Exterior" },
-  { src: roomImg, h: "h-56", cat: "Rooms" },
-  { src: banquetImg, h: "h-72", cat: "Banquet" },
+  { src: facadeImg, h: "h-56", cat: "Hotel" },
+  { src: interiorImg, h: "h-72", cat: "Interior" },
   { src: restaurantImg, h: "h-64", cat: "Restaurant" },
-  { src: barImg, h: "h-80", cat: "Bar" },
+  { src: food2, h: "h-80", cat: "Food" },
   { src: food1, h: "h-56", cat: "Food" },
-  { src: suiteImg, h: "h-72", cat: "Rooms" },
-  { src: exteriorImg, h: "h-64", cat: "Hotel" },
+  { src: food3, h: "h-72", cat: "Food" },
+  { src: exterior2, h: "h-64", cat: "Hotel" },
 ];
 
 function Gallery() {
