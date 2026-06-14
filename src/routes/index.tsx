@@ -6,18 +6,18 @@ import {
 } from "lucide-react";
 import heroAsset from "@/assets/hero.jpg.asset.json";
 import restaurantAsset from "@/assets/restaurant.jpg.asset.json";
-import room1Asset from "@/assets/room1.jpg.asset.json";
-import room2Asset from "@/assets/room2.jpg.asset.json";
-import room3Asset from "@/assets/room3.jpg.asset.json";
+import room1Img from "@/assets/room1.jpg";
+import room2Img from "@/assets/room2.jpg";
+import room3Img from "@/assets/room3.jpg";
 import barAsset from "@/assets/bar.jpg.asset.json";
 import conferenceAsset from "@/assets/conference.jpg.asset.json";
 import gardenAsset from "@/assets/garden.jpg.asset.json";
 import poolAsset from "@/assets/pool.jpg.asset.json";
 const hero = heroAsset.url;
 const restaurantImg = restaurantAsset.url;
-const room1 = room1Asset.url;
-const room2 = room2Asset.url;
-const room3 = room3Asset.url;
+const room1 = room1Img;
+const room2 = room2Img;
+const room3 = room3Img;
 const barImg = barAsset.url;
 const banquetImg = conferenceAsset.url;
 const gardenImg = gardenAsset.url;
@@ -136,8 +136,8 @@ function Hero() {
           </a>
         </div>
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/15 rounded-2xl overflow-hidden border border-white/15 max-w-3xl mx-auto backdrop-blur-sm">
-          {[
-            { n: "50+", l: "Rooms" },
+            {[
+            { n: "20", l: "Rooms" },
             { n: "500", l: "Banquet Capacity" },
             { n: "24/7", l: "Service" },
             { n: "4.6★", l: "Guest Rating" },
@@ -211,9 +211,9 @@ function About() {
 }
 
 const ROOMS = [
-  { img: room1, name: "Deluxe Room", desc: "Plush king bed, elegant interiors, perfect for couples and business travellers.", amen: ["King Bed", "Free Wi-Fi", "AC", "TV", "Breakfast"], occ: "2 Adults" },
-  { img: room2, name: "Executive Suite", desc: "Spacious suite with separate sitting area and garden view balcony.", amen: ["King Bed", "Lounge", "Mini Bar", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
-  { img: room3, name: "Family Room", desc: "Designed for families, featuring extra space and twin beds option.", amen: ["Twin/King", "Wi-Fi", "AC", "TV", "Breakfast"], occ: "4 Adults" },
+  { img: room1, name: "Deluxe Room", desc: "Plush king bed, elegant interiors with garden views — perfect for couples and business travellers.", amen: ["King Bed", "Free Wi-Fi", "AC", "TV", "Breakfast"], occ: "2 Adults" },
+  { img: room2, name: "Cottage", desc: "Private standalone cottage with veranda surrounded by lush greenery — ideal for a peaceful retreat.", amen: ["King Bed", "Private Veranda", "Garden View", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
+  { img: room3, name: "Deluxe Room (Twin)", desc: "Spacious deluxe room with twin beds and balcony overlooking the gardens — great for families or friends.", amen: ["Twin Beds", "Balcony", "Wi-Fi", "AC", "Breakfast"], occ: "3 Adults" },
 ];
 
 function Rooms() {
@@ -410,8 +410,8 @@ const GALLERY = [
   { src: gardenImg, h: "h-64", cat: "Gardens" },
   { src: poolImg, h: "h-72", cat: "Pool" },
   { src: room1, h: "h-56", cat: "Deluxe Room" },
-  { src: room2, h: "h-80", cat: "Executive Suite" },
-  { src: room3, h: "h-56", cat: "Family Room" },
+  { src: room2, h: "h-80", cat: "Cottage" },
+  { src: room3, h: "h-56", cat: "Deluxe Room" },
   { src: restaurantImg, h: "h-72", cat: "Restaurant" },
   { src: barImg, h: "h-64", cat: "Bar" },
 ];
