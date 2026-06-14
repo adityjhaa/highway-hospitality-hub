@@ -6,9 +6,9 @@ import {
 } from "lucide-react";
 import heroAsset from "@/assets/hero.jpg.asset.json";
 import restaurantAsset from "@/assets/restaurant.jpg.asset.json";
-import room1Asset from "@/assets/room1.jpg.asset.json";
-import room2Asset from "@/assets/room2.jpg.asset.json";
-import room3Asset from "@/assets/room3.jpg.asset.json";
+import room1Img from "@/assets/room1.jpg";
+import room2Img from "@/assets/room2.jpg";
+import room3Img from "@/assets/room3.jpg";
 import barAsset from "@/assets/bar.jpg.asset.json";
 import conferenceAsset from "@/assets/conference.jpg.asset.json";
 import gardenAsset from "@/assets/garden.jpg.asset.json";
