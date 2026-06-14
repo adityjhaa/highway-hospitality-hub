@@ -127,7 +127,7 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       <div className="absolute inset-0">
-        <img src={hero} alt="Astha Midway hotel exterior at twilight" width={1920} height={1080} className="w-full h-full object-cover animate-ken-burns" />
+        <img src={hero} alt="Astha Midway cottage exterior surrounded by greenery" width={1920} height={1080} className="w-full h-full object-cover object-top animate-ken-burns" />
         <div className="absolute inset-0 bg-gradient-hero" />
       </div>
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-primary-foreground py-24">
@@ -184,7 +184,7 @@ function About() {
     <section id="about" className="py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative">
-          <img src={poolImg} alt="Astha Midway poolside" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover" />
+          <img src={hero} alt="Astha Midway cottage exterior" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover object-top" />
           <div className="absolute -bottom-6 -right-6 hidden md:block bg-card rounded-2xl shadow-luxe p-6 border border-border max-w-[220px]">
             <div className="font-display text-3xl text-primary">15+</div>
             <div className="text-sm text-muted-foreground mt-1">Years of warm hospitality on the highway</div>
@@ -423,8 +423,8 @@ function Reviews() {
 }
 
 const GALLERY = [
-  { src: hero, h: "h-80", cat: "Resort Exterior" },
   { src: restaurantReal, h: "h-72", cat: "Restaurant Interior" },
+  { src: hero, h: "h-80", cat: "Cottage Exterior" },
   { src: cottage1, h: "h-80", cat: "Garden Cottage" },
   { src: trainRestaurant, h: "h-72", cat: "Train Dining" },
   { src: room1, h: "h-56", cat: "Deluxe Room" },
