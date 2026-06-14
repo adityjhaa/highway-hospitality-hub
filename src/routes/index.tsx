@@ -215,7 +215,6 @@ function About() {
 }
 
 const ROOMS = [
-const ROOMS = [
   { img: cottage1, name: "Garden Cottage", desc: "One of our 8 private standalone cottages with a wooden veranda, framed by palms and tropical gardens — a peaceful, resort-style retreat.", amen: ["King Bed", "Private Veranda", "Garden View", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
   { img: room1, name: "Deluxe Room", desc: "Plush king bed and elegant interiors opening to lush garden views — ideal for couples and business travellers.", amen: ["King Bed", "Free Wi-Fi", "AC", "TV", "Breakfast"], occ: "2 Adults" },
   { img: cottage2, name: "Premium Cottage", desc: "Spacious cottage interior with vaulted wood-beam ceiling and French doors opening onto a private green patio.", amen: ["King Bed", "Patio", "Wi-Fi", "AC", "Breakfast"], occ: "2 Adults + 1 Child" },
