@@ -136,8 +136,8 @@ function Hero() {
           </a>
         </div>
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/15 rounded-2xl overflow-hidden border border-white/15 max-w-3xl mx-auto backdrop-blur-sm">
-          {[
-            { n: "50+", l: "Rooms" },
+            {[
+            { n: "20", l: "Rooms" },
             { n: "500", l: "Banquet Capacity" },
             { n: "24/7", l: "Service" },
             { n: "4.6★", l: "Guest Rating" },
