@@ -5,28 +5,23 @@ import {
   Star, ChevronRight, Menu, X, Calendar,
 } from "lucide-react";
 import heroAsset from "@/assets/hero.jpg.asset.json";
-import exteriorAsset from "@/assets/exterior.jpg.asset.json";
-import exterior2Asset from "@/assets/exterior2.jpg.asset.json";
-import facadeAsset from "@/assets/facade.jpg.asset.json";
 import restaurantAsset from "@/assets/restaurant.jpg.asset.json";
-import interiorAsset from "@/assets/interior.jpg.asset.json";
-import food1Asset from "@/assets/food1.jpg.asset.json";
-import food2Asset from "@/assets/food2.jpg.asset.json";
-import food3Asset from "@/assets/food3.jpg.asset.json";
+import room1Asset from "@/assets/room1.jpg.asset.json";
+import room2Asset from "@/assets/room2.jpg.asset.json";
+import room3Asset from "@/assets/room3.jpg.asset.json";
+import barAsset from "@/assets/bar.jpg.asset.json";
+import conferenceAsset from "@/assets/conference.jpg.asset.json";
+import gardenAsset from "@/assets/garden.jpg.asset.json";
+import poolAsset from "@/assets/pool.jpg.asset.json";
 const hero = heroAsset.url;
-const exteriorImg = exteriorAsset.url;
-const exterior2 = exterior2Asset.url;
-const facadeImg = facadeAsset.url;
 const restaurantImg = restaurantAsset.url;
-const interiorImg = interiorAsset.url;
-const food1 = food1Asset.url;
-const food2 = food2Asset.url;
-const food3 = food3Asset.url;
-// Real photos are reused across sections where category-specific shots are not publicly available.
-const roomImg = interiorImg;
-const suiteImg = restaurantImg;
-const barImg = interiorImg;
-const banquetImg = facadeImg;
+const room1 = room1Asset.url;
+const room2 = room2Asset.url;
+const room3 = room3Asset.url;
+const barImg = barAsset.url;
+const banquetImg = conferenceAsset.url;
+const gardenImg = gardenAsset.url;
+const poolImg = poolAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -173,7 +168,7 @@ function About() {
     <section id="about" className="py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative">
-          <img src={exteriorImg} alt="Astha Midway poolside" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover" />
+          <img src={poolImg} alt="Astha Midway poolside" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover" />
           <div className="absolute -bottom-6 -right-6 hidden md:block bg-card rounded-2xl shadow-luxe p-6 border border-border max-w-[220px]">
             <div className="font-display text-3xl text-primary">15+</div>
             <div className="text-sm text-muted-foreground mt-1">Years of warm hospitality on the highway</div>
@@ -216,9 +211,9 @@ function About() {
 }
 
 const ROOMS = [
-  { img: roomImg, name: "Deluxe Room", desc: "Plush king bed, elegant interiors, perfect for couples and business travellers.", amen: ["King Bed", "Free Wi-Fi", "AC", "TV", "Breakfast"], occ: "2 Adults" },
-  { img: suiteImg, name: "Executive Suite", desc: "Spacious suite with separate sitting area and panoramic views.", amen: ["King Bed", "Lounge", "Mini Bar", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
-  { img: roomImg, name: "Family Room", desc: "Designed for families, featuring extra space and twin beds option.", amen: ["Twin/King", "Wi-Fi", "AC", "TV", "Breakfast"], occ: "4 Adults" },
+  { img: room1, name: "Deluxe Room", desc: "Plush king bed, elegant interiors, perfect for couples and business travellers.", amen: ["King Bed", "Free Wi-Fi", "AC", "TV", "Breakfast"], occ: "2 Adults" },
+  { img: room2, name: "Executive Suite", desc: "Spacious suite with separate sitting area and garden view balcony.", amen: ["King Bed", "Lounge", "Mini Bar", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
+  { img: room3, name: "Family Room", desc: "Designed for families, featuring extra space and twin beds option.", amen: ["Twin/King", "Wi-Fi", "AC", "TV", "Breakfast"], occ: "4 Adults" },
 ];
 
 function Rooms() {
@@ -286,8 +281,8 @@ function Restaurant() {
         </div>
         <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
           <img src={restaurantImg} alt="Restaurant interior" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-soft w-full h-72 object-cover col-span-2" />
-          <img src={food1} alt="Plated dish" width={1024} height={1024} loading="lazy" className="rounded-2xl shadow-soft w-full h-48 object-cover" />
-          <img src={restaurantImg} alt="Restaurant ambience" width={1280} height={960} loading="lazy" className="rounded-2xl shadow-soft w-full h-48 object-cover" />
+          <img src={gardenImg} alt="Resort garden surroundings" width={1280} height={960} loading="lazy" className="rounded-2xl shadow-soft w-full h-48 object-cover" />
+          <img src={poolImg} alt="Poolside seating" width={1280} height={960} loading="lazy" className="rounded-2xl shadow-soft w-full h-48 object-cover" />
         </div>
       </div>
     </section>
@@ -411,14 +406,14 @@ function Reviews() {
 }
 
 const GALLERY = [
-  { src: hero, h: "h-80", cat: "Exterior" },
-  { src: facadeImg, h: "h-56", cat: "Hotel" },
-  { src: interiorImg, h: "h-72", cat: "Interior" },
-  { src: restaurantImg, h: "h-64", cat: "Restaurant" },
-  { src: food2, h: "h-80", cat: "Food" },
-  { src: food1, h: "h-56", cat: "Food" },
-  { src: food3, h: "h-72", cat: "Food" },
-  { src: exterior2, h: "h-64", cat: "Hotel" },
+  { src: hero, h: "h-80", cat: "Resort Exterior" },
+  { src: gardenImg, h: "h-64", cat: "Gardens" },
+  { src: poolImg, h: "h-72", cat: "Pool" },
+  { src: room1, h: "h-56", cat: "Deluxe Room" },
+  { src: room2, h: "h-80", cat: "Executive Suite" },
+  { src: room3, h: "h-56", cat: "Family Room" },
+  { src: restaurantImg, h: "h-72", cat: "Restaurant" },
+  { src: barImg, h: "h-64", cat: "Bar" },
 ];
 
 function Gallery() {
