@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, type InputHTMLAttributes } from "react";
 import {
   Phone, MessageCircle, MapPin, Mail, Clock, Users, Bed, Utensils, Wine, PartyPopper,
   Star, ChevronRight, Menu, X, Calendar,
@@ -15,6 +15,12 @@ import barAsset from "@/assets/bar.jpg.asset.json";
 import conferenceAsset from "@/assets/conference.jpg.asset.json";
 import gardenAsset from "@/assets/garden.jpg.asset.json";
 import poolAsset from "@/assets/pool.jpg.asset.json";
+import restaurantCleanAsset from "@/assets/restaurant-clean.jpg.asset.json";
+import trainRestaurantAsset from "@/assets/train-restaurant.jpg.asset.json";
+import mocktailAsset from "@/assets/mocktail.jpg.asset.json";
+import noodlesAsset from "@/assets/noodles.jpg.asset.json";
+import babycornAsset from "@/assets/babycorn.jpg.asset.json";
+import conferenceCleanAsset from "@/assets/conference-clean.jpg.asset.json";
 const hero = heroAsset.url;
 const restaurantImg = restaurantAsset.url;
 const room1 = room1Img;
@@ -26,6 +32,12 @@ const barImg = barAsset.url;
 const banquetImg = conferenceAsset.url;
 const gardenImg = gardenAsset.url;
 const poolImg = poolAsset.url;
+const restaurantReal = restaurantCleanAsset.url;
+const trainRestaurant = trainRestaurantAsset.url;
+const mocktailImg = mocktailAsset.url;
+const noodlesImg = noodlesAsset.url;
+const babycornImg = babycornAsset.url;
+const conferenceReal = conferenceCleanAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
