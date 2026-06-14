@@ -13,11 +13,6 @@ import interiorAsset from "@/assets/interior.jpg.asset.json";
 import food1Asset from "@/assets/food1.jpg.asset.json";
 import food2Asset from "@/assets/food2.jpg.asset.json";
 import food3Asset from "@/assets/food3.jpg.asset.json";
-import roomImgLocal from "@/assets/room.jpg";
-import suiteImgLocal from "@/assets/suite.jpg";
-import barImgLocal from "@/assets/bar.jpg";
-import banquetImgLocal from "@/assets/banquet.jpg";
-
 const hero = heroAsset.url;
 const exteriorImg = exteriorAsset.url;
 const exterior2 = exterior2Asset.url;
@@ -27,10 +22,11 @@ const interiorImg = interiorAsset.url;
 const food1 = food1Asset.url;
 const food2 = food2Asset.url;
 const food3 = food3Asset.url;
-const roomImg = roomImgLocal;
-const suiteImg = suiteImgLocal;
-const barImg = barImgLocal;
-const banquetImg = banquetImgLocal;
+// Real photos are reused across sections where category-specific shots are not publicly available.
+const roomImg = interiorImg;
+const suiteImg = restaurantImg;
+const barImg = interiorImg;
+const banquetImg = facadeImg;
 
 export const Route = createFileRoute("/")({
   head: () => ({
