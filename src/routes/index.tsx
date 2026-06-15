@@ -116,7 +116,7 @@ function Nav() {
 }
 
 function Hero() {
-  const slides = [hero, gardenImg, poolImg, cottage1];
+  const slides = [facade, lightsWalk, cottagePath];
   const [active, setActive] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 5000);
