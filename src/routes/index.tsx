@@ -86,7 +86,7 @@ function Nav() {
     <header className="fixed top-0 inset-x-0 z-50 bg-background/85 backdrop-blur-md border-b border-border/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         <a href="#home" className="flex items-center gap-2 shrink-0">
-          <span className="grid place-items-center w-9 h-9 rounded-full bg-primary text-primary-foreground font-display text-lg">A</span>
+          <img src={truesangLogo} alt="Truesang Hotel & Resort" className="w-10 h-10 rounded-full object-contain" />
           <span className="font-display text-xl font-semibold tracking-tight">Astha <span className="text-gold">Midway</span></span>
         </a>
         <nav className="hidden lg:flex items-center gap-7 text-sm font-medium">
