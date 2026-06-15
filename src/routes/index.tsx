@@ -191,7 +191,7 @@ function About() {
     <section id="about" className="py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative">
-          <img src={gardenImg} alt="Lush tropical gardens at Astha Midway" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover object-center" />
+          <img src={cottagePath} alt="Bougainvillea-covered walkway between cottages at Astha Midway" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover object-center" />
           <div className="absolute -bottom-6 -right-6 hidden md:block bg-card rounded-2xl shadow-luxe p-6 border border-border max-w-[220px]">
             <div className="font-display text-3xl text-primary">Trusted</div>
             <div className="text-sm text-muted-foreground mt-1">Hospitality cherished by travellers on the highway</div>
@@ -234,10 +234,10 @@ function About() {
 }
 
 const ROOMS = [
-  { img: cottage1, name: "Garden Cottage", desc: "A private standalone cottage with a wooden veranda, framed by palms and tropical gardens — a peaceful, resort-style retreat.", amen: ["King Bed", "Private Veranda", "Garden View", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
-  { img: room1, name: "Deluxe Room", desc: "Plush king bed and elegant interiors opening to lush garden views — ideal for couples and business travellers.", amen: ["King Bed", "Free Wi-Fi", "AC", "TV", "Breakfast"], occ: "2 Adults" },
-  { img: cottage2, name: "Premium Cottage", desc: "Spacious cottage interior with vaulted wood-beam ceiling and French doors opening onto a private green patio.", amen: ["King Bed", "Patio", "Wi-Fi", "AC", "Breakfast"], occ: "2 Adults + 1 Child" },
-  { img: room3, name: "Deluxe Room (Twin)", desc: "Spacious deluxe with twin beds and balcony overlooking the gardens — great for families or friends.", amen: ["Twin Beds", "Balcony", "Wi-Fi", "AC", "Breakfast"], occ: "3 Adults" },
+const ROOMS = [
+  { img: roomCeiling, name: "Signature Suite", desc: "A spacious suite crowned by a striking wooden coffered ceiling with warm cove lighting, plush seating and a king bed framed by elegant draperies.", amen: ["King Bed", "Lounge Sofa", "AC", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
+  { img: roomRedbed, name: "Deluxe Room", desc: "Refined deluxe room with rich timber finishes, full-length drapery and a thoughtfully styled work nook — ideal for couples and business travellers.", amen: ["King Bed", "Work Desk", "AC", "Wi-Fi", "Breakfast"], occ: "2 Adults" },
+  { img: cottagePath, name: "Garden Cottage", desc: "A private standalone cottage tucked beneath a flowering bougainvillea pergola — a peaceful, resort-style retreat just steps from the gardens.", amen: ["Private Entry", "Garden View", "AC", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
 ];
 
 function Rooms() {
@@ -430,14 +430,14 @@ function Reviews() {
 }
 
 const GALLERY = [
+const GALLERY = [
+  { src: facade, h: "h-80", cat: "Astha Midway Entrance" },
   { src: restaurantReal, h: "h-72", cat: "Restaurant Interior" },
-  { src: hero, h: "h-80", cat: "Cottage Exterior" },
-  { src: cottage1, h: "h-80", cat: "Garden Cottage" },
-  { src: trainRestaurant, h: "h-72", cat: "Train Dining" },
-  { src: room1, h: "h-56", cat: "Deluxe Room" },
-  { src: cottage2, h: "h-72", cat: "Cottage Interior" },
-  { src: room3, h: "h-56", cat: "Deluxe Room" },
-  { src: noodlesImg, h: "h-72", cat: "Restaurant Cuisine" },
+  { src: cottagePath, h: "h-80", cat: "Cottage Walkway" },
+  { src: roomCeiling, h: "h-72", cat: "Signature Suite" },
+  { src: lightsWalk, h: "h-72", cat: "Festive Lights" },
+  { src: trainRestaurant, h: "h-56", cat: "Train Dining" },
+  { src: roomRedbed, h: "h-72", cat: "Deluxe Room" },
   { src: mocktailImg, h: "h-64", cat: "Bar Mocktail" },
   { src: conferenceReal, h: "h-72", cat: "Conference Hall" },
   { src: babycornImg, h: "h-64", cat: "Signature Starter" },
