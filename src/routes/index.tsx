@@ -234,7 +234,6 @@ function About() {
 }
 
 const ROOMS = [
-const ROOMS = [
   { img: roomCeiling, name: "Signature Suite", desc: "A spacious suite crowned by a striking wooden coffered ceiling with warm cove lighting, plush seating and a king bed framed by elegant draperies.", amen: ["King Bed", "Lounge Sofa", "AC", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
   { img: roomRedbed, name: "Deluxe Room", desc: "Refined deluxe room with rich timber finishes, full-length drapery and a thoughtfully styled work nook — ideal for couples and business travellers.", amen: ["King Bed", "Work Desk", "AC", "Wi-Fi", "Breakfast"], occ: "2 Adults" },
   { img: cottagePath, name: "Garden Cottage", desc: "A private standalone cottage tucked beneath a flowering bougainvillea pergola — a peaceful, resort-style retreat just steps from the gardens.", amen: ["Private Entry", "Garden View", "AC", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
