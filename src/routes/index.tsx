@@ -199,7 +199,7 @@ function About() {
     <section id="about" className="py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative">
-          <img src={hero} alt="Astha Midway cottage exterior" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover object-top" />
+          <img src={gardenImg} alt="Lush tropical gardens at Astha Midway" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover object-center" />
           <div className="absolute -bottom-6 -right-6 hidden md:block bg-card rounded-2xl shadow-luxe p-6 border border-border max-w-[220px]">
             <div className="font-display text-3xl text-primary">Trusted</div>
             <div className="text-sm text-muted-foreground mt-1">Hospitality cherished by travellers on the highway</div>
