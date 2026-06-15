@@ -429,7 +429,6 @@ function Reviews() {
 }
 
 const GALLERY = [
-const GALLERY = [
   { src: facade, h: "h-80", cat: "Astha Midway Entrance" },
   { src: restaurantReal, h: "h-72", cat: "Restaurant Interior" },
   { src: cottagePath, h: "h-80", cat: "Cottage Walkway" },
