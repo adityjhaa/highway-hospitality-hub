@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState, type InputHTMLAttributes } from "react";
+import { useState, useEffect, type InputHTMLAttributes } from "react";
 import {
   Phone, MessageCircle, MapPin, Mail, Clock, Users, Bed, Utensils, Wine, PartyPopper,
   Star, ChevronRight, Menu, X, Calendar,
@@ -124,10 +124,25 @@ function Nav() {
 }
 
 function Hero() {
+  const slides = [hero, gardenImg, poolImg, cottage1];
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 5000);
+    return () => clearInterval(id);
+  }, [slides.length]);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       <div className="absolute inset-0">
-        <img src={hero} alt="Astha Midway cottage exterior surrounded by greenery" width={1920} height={1080} className="w-full h-full object-cover object-top animate-ken-burns" />
+        {slides.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt="Astha Midway resort surroundings"
+            width={1920}
+            height={1080}
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-[2000ms] ease-in-out ${i === active ? "opacity-100 animate-ken-burns" : "opacity-0"}`}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-hero" />
       </div>
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-primary-foreground py-24">
