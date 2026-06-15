@@ -153,9 +153,9 @@ function Hero() {
         </div>
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/15 rounded-2xl overflow-hidden border border-white/15 max-w-3xl mx-auto backdrop-blur-sm">
             {[
-            { n: "20", l: "Rooms" },
-            { n: "8", l: "Garden Cottages" },
-            { n: "500", l: "Banquet Capacity" },
+            { n: "Elegant", l: "Stays" },
+            { n: "Charming", l: "Cottages" },
+            { n: "Grand", l: "Celebrations" },
             { n: "24/7", l: "Service" },
           ].map(s => (
             <div key={s.l} className="bg-charcoal/40 p-5 text-center">
@@ -186,8 +186,8 @@ function About() {
         <div className="relative">
           <img src={hero} alt="Astha Midway cottage exterior" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover object-top" />
           <div className="absolute -bottom-6 -right-6 hidden md:block bg-card rounded-2xl shadow-luxe p-6 border border-border max-w-[220px]">
-            <div className="font-display text-3xl text-primary">15+</div>
-            <div className="text-sm text-muted-foreground mt-1">Years of warm hospitality on the highway</div>
+            <div className="font-display text-3xl text-primary">Trusted</div>
+            <div className="text-sm text-muted-foreground mt-1">Hospitality cherished by travellers on the highway</div>
           </div>
         </div>
         <div>
@@ -227,7 +227,7 @@ function About() {
 }
 
 const ROOMS = [
-  { img: cottage1, name: "Garden Cottage", desc: "One of our 8 private standalone cottages with a wooden veranda, framed by palms and tropical gardens — a peaceful, resort-style retreat.", amen: ["King Bed", "Private Veranda", "Garden View", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
+  { img: cottage1, name: "Garden Cottage", desc: "A private standalone cottage with a wooden veranda, framed by palms and tropical gardens — a peaceful, resort-style retreat.", amen: ["King Bed", "Private Veranda", "Garden View", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
   { img: room1, name: "Deluxe Room", desc: "Plush king bed and elegant interiors opening to lush garden views — ideal for couples and business travellers.", amen: ["King Bed", "Free Wi-Fi", "AC", "TV", "Breakfast"], occ: "2 Adults" },
   { img: cottage2, name: "Premium Cottage", desc: "Spacious cottage interior with vaulted wood-beam ceiling and French doors opening onto a private green patio.", amen: ["King Bed", "Patio", "Wi-Fi", "AC", "Breakfast"], occ: "2 Adults + 1 Child" },
   { img: room3, name: "Deluxe Room (Twin)", desc: "Spacious deluxe with twin beds and balcony overlooking the gardens — great for families or friends.", amen: ["Twin Beds", "Balcony", "Wi-Fi", "AC", "Breakfast"], occ: "3 Adults" },
