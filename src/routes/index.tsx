@@ -4,38 +4,30 @@ import {
   Phone, MessageCircle, MapPin, Mail, Clock, Users, Bed, Utensils, Wine, PartyPopper,
   Star, ChevronRight, Menu, X, Calendar,
 } from "lucide-react";
-import heroAsset from "@/assets/hero.jpg.asset.json";
-import restaurantAsset from "@/assets/restaurant.jpg.asset.json";
-import room1Img from "@/assets/room1.jpg";
-import room2Img from "@/assets/room2.jpg";
-import room3Img from "@/assets/room3.jpg";
-import cottage1Img from "@/assets/cottage1.jpg";
-import cottage2Img from "@/assets/cottage2.jpg";
 import barAsset from "@/assets/bar.jpg.asset.json";
 import conferenceAsset from "@/assets/conference.jpg.asset.json";
-import gardenAsset from "@/assets/garden.jpg.asset.json";
-import poolAsset from "@/assets/pool.jpg.asset.json";
 import restaurantCleanAsset from "@/assets/restaurant-clean.jpg.asset.json";
 import trainRestaurantAsset from "@/assets/train-restaurant.jpg.asset.json";
 import mocktailAsset from "@/assets/mocktail.jpg.asset.json";
-import noodlesAsset from "@/assets/noodles.jpg.asset.json";
 import babycornAsset from "@/assets/babycorn.jpg.asset.json";
 import conferenceCleanAsset from "@/assets/conference-clean.jpg.asset.json";
-const hero = heroAsset.url;
-const restaurantImg = restaurantAsset.url;
-const room1 = room1Img;
-const room2 = room2Img;
-const room3 = room3Img;
-const cottage1 = cottage1Img;
-const cottage2 = cottage2Img;
+import realRoomCeilingAsset from "@/assets/real-room_ceiling.jpg.asset.json";
+import realRoomRedbedAsset from "@/assets/real-room_redbed.jpg.asset.json";
+import realCottagePathAsset from "@/assets/real-cottage_path.jpg.asset.json";
+import realLightsAsset from "@/assets/real-lights.jpg.asset.json";
+import realFacadeAsset from "@/assets/real-facade.jpg.asset.json";
+import realLogoAsset from "@/assets/real-logo.png.asset.json";
+const roomCeiling = realRoomCeilingAsset.url;
+const roomRedbed = realRoomRedbedAsset.url;
+const cottagePath = realCottagePathAsset.url;
+const lightsWalk = realLightsAsset.url;
+const facade = realFacadeAsset.url;
+const truesangLogo = realLogoAsset.url;
 const barImg = barAsset.url;
 const banquetImg = conferenceAsset.url;
-const gardenImg = gardenAsset.url;
-const poolImg = poolAsset.url;
 const restaurantReal = restaurantCleanAsset.url;
 const trainRestaurant = trainRestaurantAsset.url;
 const mocktailImg = mocktailAsset.url;
-const noodlesImg = noodlesAsset.url;
 const babycornImg = babycornAsset.url;
 const conferenceReal = conferenceCleanAsset.url;
 
@@ -94,7 +86,7 @@ function Nav() {
     <header className="fixed top-0 inset-x-0 z-50 bg-background/85 backdrop-blur-md border-b border-border/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         <a href="#home" className="flex items-center gap-2 shrink-0">
-          <span className="grid place-items-center w-9 h-9 rounded-full bg-primary text-primary-foreground font-display text-lg">A</span>
+          <img src={truesangLogo} alt="Truesang Hotel & Resort" className="w-10 h-10 rounded-full object-contain" />
           <span className="font-display text-xl font-semibold tracking-tight">Astha <span className="text-gold">Midway</span></span>
         </a>
         <nav className="hidden lg:flex items-center gap-7 text-sm font-medium">
@@ -124,7 +116,7 @@ function Nav() {
 }
 
 function Hero() {
-  const slides = [hero, gardenImg, poolImg, cottage1];
+  const slides = [facade, lightsWalk, cottagePath];
   const [active, setActive] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 5000);
@@ -199,7 +191,7 @@ function About() {
     <section id="about" className="py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative">
-          <img src={gardenImg} alt="Lush tropical gardens at Astha Midway" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover object-center" />
+          <img src={cottagePath} alt="Bougainvillea-covered walkway between cottages at Astha Midway" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-luxe w-full h-[450px] object-cover object-center" />
           <div className="absolute -bottom-6 -right-6 hidden md:block bg-card rounded-2xl shadow-luxe p-6 border border-border max-w-[220px]">
             <div className="font-display text-3xl text-primary">Trusted</div>
             <div className="text-sm text-muted-foreground mt-1">Hospitality cherished by travellers on the highway</div>
@@ -242,10 +234,9 @@ function About() {
 }
 
 const ROOMS = [
-  { img: cottage1, name: "Garden Cottage", desc: "A private standalone cottage with a wooden veranda, framed by palms and tropical gardens — a peaceful, resort-style retreat.", amen: ["King Bed", "Private Veranda", "Garden View", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
-  { img: room1, name: "Deluxe Room", desc: "Plush king bed and elegant interiors opening to lush garden views — ideal for couples and business travellers.", amen: ["King Bed", "Free Wi-Fi", "AC", "TV", "Breakfast"], occ: "2 Adults" },
-  { img: cottage2, name: "Premium Cottage", desc: "Spacious cottage interior with vaulted wood-beam ceiling and French doors opening onto a private green patio.", amen: ["King Bed", "Patio", "Wi-Fi", "AC", "Breakfast"], occ: "2 Adults + 1 Child" },
-  { img: room3, name: "Deluxe Room (Twin)", desc: "Spacious deluxe with twin beds and balcony overlooking the gardens — great for families or friends.", amen: ["Twin Beds", "Balcony", "Wi-Fi", "AC", "Breakfast"], occ: "3 Adults" },
+  { img: roomCeiling, name: "Signature Suite", desc: "A spacious suite crowned by a striking wooden coffered ceiling with warm cove lighting, plush seating and a king bed framed by elegant draperies.", amen: ["King Bed", "Lounge Sofa", "AC", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
+  { img: roomRedbed, name: "Deluxe Room", desc: "Refined deluxe room with rich timber finishes, full-length drapery and a thoughtfully styled work nook — ideal for couples and business travellers.", amen: ["King Bed", "Work Desk", "AC", "Wi-Fi", "Breakfast"], occ: "2 Adults" },
+  { img: cottagePath, name: "Garden Cottage", desc: "A private standalone cottage tucked beneath a flowering bougainvillea pergola — a peaceful, resort-style retreat just steps from the gardens.", amen: ["Private Entry", "Garden View", "AC", "Wi-Fi", "Breakfast"], occ: "2 Adults + 1 Child" },
 ];
 
 function Rooms() {
@@ -438,14 +429,13 @@ function Reviews() {
 }
 
 const GALLERY = [
+  { src: facade, h: "h-80", cat: "Astha Midway Entrance" },
   { src: restaurantReal, h: "h-72", cat: "Restaurant Interior" },
-  { src: hero, h: "h-80", cat: "Cottage Exterior" },
-  { src: cottage1, h: "h-80", cat: "Garden Cottage" },
-  { src: trainRestaurant, h: "h-72", cat: "Train Dining" },
-  { src: room1, h: "h-56", cat: "Deluxe Room" },
-  { src: cottage2, h: "h-72", cat: "Cottage Interior" },
-  { src: room3, h: "h-56", cat: "Deluxe Room" },
-  { src: noodlesImg, h: "h-72", cat: "Restaurant Cuisine" },
+  { src: cottagePath, h: "h-80", cat: "Cottage Walkway" },
+  { src: roomCeiling, h: "h-72", cat: "Signature Suite" },
+  { src: lightsWalk, h: "h-72", cat: "Festive Lights" },
+  { src: trainRestaurant, h: "h-56", cat: "Train Dining" },
+  { src: roomRedbed, h: "h-72", cat: "Deluxe Room" },
   { src: mocktailImg, h: "h-64", cat: "Bar Mocktail" },
   { src: conferenceReal, h: "h-72", cat: "Conference Hall" },
   { src: babycornImg, h: "h-64", cat: "Signature Starter" },
