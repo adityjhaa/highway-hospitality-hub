@@ -77,11 +77,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Astha Midway — Highway Hotel, Restaurant, Bar & Banquet" },
-      { name: "description", content: "Comfortable rooms, delicious food, refreshing bar and premium banquet hall at Astha Midway by Truesang Pvt Ltd." },
-      { name: "author", content: "Truesang Pvt Ltd" },
-      { property: "og:title", content: "Astha Midway — Comfort, Taste & Celebration" },
-      { property: "og:description", content: "Highway hotel with rooms, restaurant, bar and banquet hall." },
+      { title: "Astha Midway | Hotel, Cottages, Restaurant & Events" },
+      {
+        name: "description",
+        content:
+          "Astha Midway by Truesang Pvt. Ltd. offers inviting rooms, charming cottages, vibrant dining, a premium bar, and elegant event spaces.",
+      },
+      { name: "author", content: "Truesang Pvt. Ltd." },
+      { property: "og:title", content: "Astha Midway | Stay, Dine & Celebrate" },
+      {
+        property: "og:description",
+        content:
+          "Discover scenic stays, vibrant dining, refined event spaces, and direct booking support at Astha Midway.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
