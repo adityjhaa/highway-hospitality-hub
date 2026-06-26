@@ -1,12 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, type InputHTMLAttributes, type SVGProps } from "react";
+import {
+  useEffect,
+  useState,
+  type ComponentType,
+  type InputHTMLAttributes,
+  type SVGProps,
+} from "react";
 import {
   Bed,
   ChevronRight,
   Clock,
   ExternalLink,
-  Globe,
-  Mail,
   Menu,
   PartyPopper,
   Phone,
@@ -751,7 +755,7 @@ function ContactRow({
   value,
   href,
 }: {
-  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   label: string;
   value: string;
   href?: string;
@@ -783,7 +787,7 @@ function SocialLink({
   label,
 }: {
   href: string;
-  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   label: string;
 }) {
   return (
