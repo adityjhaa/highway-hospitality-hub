@@ -1,18 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, type InputHTMLAttributes } from "react";
+import { useEffect, useState, type InputHTMLAttributes, type SVGProps } from "react";
 import {
   Bed,
-  Calendar,
   ChevronRight,
   Clock,
   ExternalLink,
-  Facebook,
   Globe,
-  Instagram,
   Mail,
-  MapPin,
   Menu,
-  MessageCircle,
   PartyPopper,
   Phone,
   Star,
@@ -35,8 +30,12 @@ import asthaNightGardenAsset from "@/assets/astha-night-garden.png.asset.json";
 import asthaPremiumCottageAsset from "@/assets/astha-premium-cottage.png.asset.json";
 import asthaRoomRetreatAsset from "@/assets/astha-room-retreat.png.asset.json";
 import asthaRoomWindowAsset from "@/assets/astha-room-window.png.asset.json";
-import asthaTrainAsset from "@/assets/astha-train.png.asset.json";
 import asthaTropicalPathAsset from "@/assets/astha-tropical-path.png.asset.json";
+import trainRestaurantWideOneAsset from "@/assets/train-restaurant-wide-1.png.asset.json";
+import trainRestaurantWideTwoAsset from "@/assets/train-restaurant-wide-2.jpg.asset.json";
+import trainRestaurantTracksAsset from "@/assets/train-restaurant-tracks.jpg.asset.json";
+import trainRestaurantServiceGreenAsset from "@/assets/train-restaurant-service-green.jpg.asset.json";
+import trainRestaurantServiceWhiteAsset from "@/assets/train-restaurant-service-white.jpg.asset.json";
 
 const truesangLogo = asthaLogoAsset.url;
 const barImg = asthaBarAsset.url;
@@ -51,8 +50,12 @@ const nightGarden = asthaNightGardenAsset.url;
 const premiumCottage = asthaPremiumCottageAsset.url;
 const roomRetreat = asthaRoomRetreatAsset.url;
 const roomWindow = asthaRoomWindowAsset.url;
-const trainRestaurant = asthaTrainAsset.url;
 const tropicalPath = asthaTropicalPathAsset.url;
+const trainRestaurantWideOne = trainRestaurantWideOneAsset.url;
+const trainRestaurantWideTwo = trainRestaurantWideTwoAsset.url;
+const trainRestaurantTracks = trainRestaurantTracksAsset.url;
+const trainRestaurantServiceGreen = trainRestaurantServiceGreenAsset.url;
+const trainRestaurantServiceWhite = trainRestaurantServiceWhiteAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -61,7 +64,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Discover Astha Midway by Truesang Pvt. Ltd. with inviting rooms, charming cottages, vibrant dining, a premium bar, banquet venues, and warm hospitality.",
+          "Discover Astha Midway by Truesang Pvt. Ltd. with scenic stays, garden cottages, signature dinning, elegant events, and refined hospitality.",
       },
       {
         property: "og:title",
@@ -101,6 +104,34 @@ const NAV = [
 ];
 
 const HERO_SLIDES = [droneView, nightGarden, tropicalPath, gardenView];
+
+const TRAIN_RESTAURANT_SLIDES = [
+  {
+    src: trainRestaurantWideOne,
+    alt: "Wide view of the train theme restaurant at Astha Midway",
+    motionClass: "animate-cinematic-zoom",
+  },
+  {
+    src: trainRestaurantTracks,
+    alt: "Train tracks running through the themed dining area",
+    motionClass: "animate-cinematic-pan",
+  },
+  {
+    src: trainRestaurantServiceGreen,
+    alt: "Mini train serving beverages at the table",
+    motionClass: "animate-cinematic-zoom-soft",
+  },
+  {
+    src: foodImg,
+    alt: "Food presentation at Astha Midway",
+    motionClass: "animate-cinematic-pan-soft",
+  },
+  {
+    src: trainRestaurantWideTwo,
+    alt: "Wide dining view of the train theme restaurant",
+    motionClass: "animate-cinematic-zoom",
+  },
+];
 
 const ROOMS = [
   {
@@ -154,11 +185,12 @@ const GALLERY = [
   { src: roomWindow, h: "h-72", cat: "Scenic Room" },
   { src: roomRetreat, h: "h-72", cat: "Elegant Interior" },
   { src: premiumCottage, h: "h-64", cat: "Premium Cottage Stay" },
-  { src: trainRestaurant, h: "h-72", cat: "Train Theme Dining" },
+  { src: trainRestaurantWideOne, h: "h-72", cat: "Train Theme Dining" },
+  { src: trainRestaurantTracks, h: "h-72", cat: "Restaurant Tracks" },
+  { src: trainRestaurantServiceGreen, h: "h-64", cat: "Beverage Service" },
+  { src: trainRestaurantServiceWhite, h: "h-64", cat: "Train Table Service" },
   { src: barImg, h: "h-64", cat: "Restaurant & Bar" },
   { src: banquetImg, h: "h-72", cat: "Banquet Hall" },
-  { src: conferenceImg, h: "h-64", cat: "Conference Space" },
-  { src: foodImg, h: "h-64", cat: "Food Highlights" },
   { src: nightGarden, h: "h-80", cat: "Night Exterior" },
 ];
 
@@ -269,9 +301,6 @@ function Hero() {
         <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-medium leading-[1.05] animate-fade-up" style={{ animationDelay: "0.1s" }}>
           Astha Midway
         </h1>
-        <p className="mt-6 text-base sm:text-lg text-white/85 max-w-2xl mx-auto animate-fade-up" style={{ animationDelay: "0.25s" }}>
-          Inviting rooms, charming cottages, vibrant dining, and elegant spaces for memorable gatherings.
-        </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3 animate-fade-up" style={{ animationDelay: "0.4s" }}>
           <a href="#rooms" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-gold text-charcoal font-semibold shadow-luxe hover:scale-[1.02] transition">
             <Bed className="w-4 h-4" /> Explore Stays
@@ -286,14 +315,13 @@ function Hero() {
 
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/15 rounded-2xl overflow-hidden border border-white/15 max-w-3xl mx-auto backdrop-blur-sm">
           {[
-            { n: "Scenic", l: "Stays" },
-            { n: "Garden", l: "Cottages" },
-            { n: "Signature", l: "Dining" },
-            { n: "Elegant", l: "Events" },
+            "Scenic Stay",
+            "Garden Cottages",
+            "Signature Dinning",
+            "Elegant Events",
           ].map((s) => (
-            <div key={s.l} className="bg-charcoal/40 p-5 text-center">
-              <div className="font-display text-2xl md:text-3xl text-gold">{s.n}</div>
-              <div className="text-[11px] uppercase tracking-widest text-white/75 mt-1">{s.l}</div>
+            <div key={s} className="bg-charcoal/40 p-5 text-center flex items-center justify-center min-h-24">
+              <div className="font-display text-xl md:text-2xl text-gold leading-tight">{s}</div>
             </div>
           ))}
         </div>
@@ -413,19 +441,36 @@ function Rooms() {
 }
 
 function Restaurant() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setActiveSlide((current) => (current + 1) % TRAIN_RESTAURANT_SLIDES.length);
+    }, 2800);
+
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section id="restaurant" className="py-24 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="order-2 lg:order-1">
           <div className="text-xs tracking-[0.25em] uppercase text-gold font-medium mb-3">— Restaurant —</div>
           <h2 className="font-display text-4xl md:text-5xl text-primary leading-tight">
-            Flavour with a lively <em className="text-gold not-italic">sense of place</em>.
+            Authentic dining with a memorable <em className="text-gold not-italic">train theme</em>.
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
-            Astha Midway pairs everyday comfort with a memorable dining atmosphere — from train-theme experiences to colourful mocktails and crowd-pleasing dishes.
+            The Train Theme Restaurant brings together a refined dining atmosphere, real table-side train service, and polished food presentation within a clean, comfortable setting.
           </p>
           <div className="mt-6 grid grid-cols-2 gap-3">
-            {["Family Dining", "Train Theme Ambience", "Freshly Prepared Dishes", "Signature Beverages", "Leisure Meals", "Celebration-Friendly Setting"].map((c) => (
+            {[
+              "Family Dining",
+              "Real Train Service",
+              "Freshly Prepared Dishes",
+              "Signature Beverages",
+              "Warm Indoor Ambience",
+              "Premium Casual Setting",
+            ].map((c) => (
               <div key={c} className="flex items-center gap-2 text-sm text-foreground/80">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" /> {c}
               </div>
@@ -440,10 +485,56 @@ function Restaurant() {
             </a>
           </div>
         </div>
-        <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
-          <img src={trainRestaurant} alt="Train theme restaurant experience at Astha Midway" width={1280} height={960} loading="lazy" className="rounded-3xl shadow-soft w-full h-72 object-cover col-span-2" />
-          <img src={foodImg} alt="Food highlights at Astha Midway restaurant" width={1280} height={960} loading="lazy" className="rounded-2xl shadow-soft w-full h-48 object-cover" />
-          <img src={gardenView} alt="Property view beside the restaurant and stay area" width={1280} height={960} loading="lazy" className="rounded-2xl shadow-soft w-full h-48 object-cover" />
+        <div className="order-1 lg:order-2 space-y-4">
+          <div className="relative overflow-hidden rounded-[1.6rem] shadow-soft border border-border/70 bg-card h-[21rem] md:h-[25rem] cinematic-frame">
+            {TRAIN_RESTAURANT_SLIDES.map((slide, index) => (
+              <img
+                key={slide.src}
+                src={slide.src}
+                alt={slide.alt}
+                width={1600}
+                height={1066}
+                loading="lazy"
+                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1800ms] ease-in-out ${slide.motionClass} ${
+                  index === activeSlide ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/28 via-charcoal/8 to-transparent" />
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-4">
+            <article className="group overflow-hidden rounded-[1.35rem] border border-border/70 bg-card shadow-soft transition-transform duration-300 hover:-translate-y-1 hover:shadow-luxe">
+              <img
+                src={trainRestaurantTracks}
+                alt="Restaurant train tracks inside the dining area"
+                width={1280}
+                height={960}
+                loading="lazy"
+                className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+            </article>
+            <article className="group overflow-hidden rounded-[1.35rem] border border-border/70 bg-card shadow-soft transition-transform duration-300 hover:-translate-y-1 hover:shadow-luxe">
+              <img
+                src={trainRestaurantServiceGreen}
+                alt="Train carrying beverages to the table"
+                width={1280}
+                height={960}
+                loading="lazy"
+                className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+            </article>
+            <article className="group overflow-hidden rounded-[1.35rem] border border-border/70 bg-card shadow-soft transition-transform duration-300 hover:-translate-y-1 hover:shadow-luxe">
+              <img
+                src={trainRestaurantServiceWhite}
+                alt="Train serving beverages across the dining table"
+                width={1280}
+                height={960}
+                loading="lazy"
+                className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -591,8 +682,8 @@ function Gallery() {
         <SectionHeader kicker="Gallery" title="Inside Astha Midway" />
         <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
           {GALLERY.map((g, i) => (
-            <div key={`${g.cat}-${i}`} className="break-inside-avoid relative group overflow-hidden rounded-2xl shadow-soft">
-              <img src={g.src} alt={g.cat} loading="lazy" className={`w-full ${g.h} object-cover group-hover:scale-110 transition-transform duration-700`} />
+            <div key={`${g.cat}-${i}`} className="break-inside-avoid relative group overflow-hidden rounded-[1.35rem] border border-border/70 shadow-soft bg-card transition-transform duration-300 hover:-translate-y-1 hover:shadow-luxe">
+              <img src={g.src} alt={g.cat} loading="lazy" className={`w-full ${g.h} object-cover group-hover:scale-[1.04] transition-transform duration-700`} />
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                 <span className="text-white text-sm font-medium">{g.cat}</span>
               </div>
@@ -613,17 +704,19 @@ function Contact() {
           <div className="bg-card rounded-3xl p-8 border border-border shadow-soft">
             <h3 className="font-display text-2xl text-primary mb-6">Reach Us</h3>
             <div className="space-y-5">
-              <ContactRow icon={MapPin} label="Location" value={ADDRESS} href={MAPS} />
-              <ContactRow icon={Phone} label="Phone" value="+91 7407188881" href={`tel:${PHONE}`} />
-              <ContactRow icon={MessageCircle} label="WhatsApp" value="+91 7407188881" href={`https://wa.me/${WHATSAPP}`} />
-              <ContactRow icon={Mail} label="Email" value={EMAIL} href={`mailto:${EMAIL}`} />
-              <ContactRow icon={Globe} label="Website" value="truesang.com" href={WEBSITE} />
+              <ContactRow icon={GoogleMapsBrandIcon} label="Location" value={ADDRESS} href={MAPS} />
+              <ContactRow icon={PhoneBrandIcon} label="Phone" value="+91 7407188881" href={`tel:${PHONE}`} />
+              <ContactRow icon={WhatsAppBrandIcon} label="WhatsApp" value="+91 7407188881" href={`https://wa.me/${WHATSAPP}`} />
+              <ContactRow icon={MailBrandIcon} label="Email" value={EMAIL} href={`mailto:${EMAIL}`} />
+              <ContactRow icon={WebsiteBrandIcon} label="Website" value="truesang.com" href={WEBSITE} />
             </div>
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
-              <SocialLink href={FACEBOOK} icon={Facebook} label="Facebook" />
-              <SocialLink href={INSTAGRAM} icon={Instagram} label="Instagram" />
-              <SocialLink href={MAPS} icon={MapPin} label="Maps" />
-              <SocialLink href={REVIEWS_LINK} icon={Star} label="Reviews" />
+            <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <SocialLink href={FACEBOOK} icon={FacebookBrandIcon} label="Facebook" />
+              <SocialLink href={INSTAGRAM} icon={InstagramBrandIcon} label="Instagram" />
+              <SocialLink href={MAPS} icon={GoogleMapsBrandIcon} label="Google Maps" />
+              <SocialLink href={REVIEWS_LINK} icon={GoogleReviewsBrandIcon} label="Google Reviews" />
+              <SocialLink href={`https://wa.me/${WHATSAPP}`} icon={WhatsAppBrandIcon} label="WhatsApp" />
+              <SocialLink href={`mailto:${EMAIL}`} icon={MailBrandIcon} label="Email" />
             </div>
           </div>
 
@@ -631,18 +724,18 @@ function Contact() {
             <img src={droneView} alt="Astha Midway aerial property view" width={1280} height={960} loading="lazy" className="rounded-2xl w-full h-64 object-cover" />
             <div className="mt-6 grid sm:grid-cols-2 gap-3">
               <a href={MAPS} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition">
-                <MapPin className="w-4 h-4" /> Open Maps
+                <GoogleMapsBrandIcon className="w-5 h-5" /> Open Maps
               </a>
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-primary text-primary font-medium hover:bg-primary hover:text-primary-foreground transition">
-                <MessageCircle className="w-4 h-4" /> WhatsApp Us
+                <WhatsAppBrandIcon className="w-5 h-5" /> WhatsApp Us
               </a>
             </div>
             <div className="mt-4 grid sm:grid-cols-2 gap-3">
               <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-border text-foreground font-medium hover:bg-secondary transition">
-                <Phone className="w-4 h-4" /> Call Now
+                <PhoneBrandIcon className="w-5 h-5" /> Call Now
               </a>
               <a href={WEBSITE} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-border text-foreground font-medium hover:bg-secondary transition">
-                <ExternalLink className="w-4 h-4" /> Visit Website
+                <WebsiteBrandIcon className="w-5 h-5" /> Visit Website
               </a>
             </div>
           </div>
@@ -658,14 +751,14 @@ function ContactRow({
   value,
   href,
 }: {
-  icon: any;
+  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
   label: string;
   value: string;
   href?: string;
 }) {
   const inner = (
     <div className="flex items-start gap-4">
-      <div className="grid place-items-center w-11 h-11 rounded-full bg-gradient-gold text-charcoal shrink-0">
+      <div className="grid place-items-center w-11 h-11 rounded-full bg-secondary shrink-0 border border-border/70 shadow-soft">
         <Icon className="w-5 h-5" />
       </div>
       <div className="min-w-0">
@@ -684,10 +777,26 @@ function ContactRow({
   );
 }
 
-function SocialLink({ href, icon: Icon, label }: { href: string; icon: any; label: string }) {
+function SocialLink({
+  href,
+  icon: Icon,
+  label,
+}: {
+  href: string;
+  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  label: string;
+}) {
   return (
-    <a href={href} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-border bg-secondary hover:bg-secondary/70 transition text-sm font-medium">
-      <Icon className="w-4 h-4 text-primary" /> {label}
+    <a
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noreferrer" : undefined}
+      className="inline-flex items-center gap-3 px-4 py-3 rounded-[1rem] border border-border/70 bg-secondary/70 hover:bg-secondary transition text-sm font-medium shadow-soft hover:-translate-y-0.5 hover:shadow-luxe duration-300"
+    >
+      <span className="grid place-items-center h-9 w-9 rounded-full bg-card border border-border/70 shrink-0">
+        <Icon className="w-4.5 h-4.5" />
+      </span>
+      <span className="leading-tight">{label}</span>
     </a>
   );
 }
@@ -718,16 +827,16 @@ function Footer() {
         <div>
           <h4 className="text-white font-medium mb-4 text-sm tracking-widest uppercase">Connect</h4>
           <ul className="space-y-2 text-sm text-white/70">
-            <li className="flex items-start gap-2"><Phone className="w-4 h-4 mt-0.5 text-gold shrink-0" /> +91 7407188881</li>
-            <li className="flex items-start gap-2"><Mail className="w-4 h-4 mt-0.5 text-gold shrink-0" /> {EMAIL}</li>
-            <li className="flex items-start gap-2"><Globe className="w-4 h-4 mt-0.5 text-gold shrink-0" /> truesang.com</li>
+            <li className="flex items-start gap-2"><PhoneBrandIcon className="w-4 h-4 mt-0.5 shrink-0" /> +91 7407188881</li>
+            <li className="flex items-start gap-2"><MailBrandIcon className="w-4 h-4 mt-0.5 shrink-0" /> {EMAIL}</li>
+            <li className="flex items-start gap-2"><WebsiteBrandIcon className="w-4 h-4 mt-0.5 shrink-0" /> truesang.com</li>
           </ul>
         </div>
         <div>
           <h4 className="text-white font-medium mb-4 text-sm tracking-widest uppercase">Follow & Book</h4>
-          <a href={`https://wa.me/${WHATSAPP}`} className="block w-full text-center py-2.5 rounded-full bg-gradient-gold text-charcoal font-medium mb-2">WhatsApp Us</a>
-          <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="block w-full text-center py-2.5 rounded-full border border-white/20 text-white font-medium hover:bg-white/10 transition mb-2">Instagram</a>
-          <a href={FACEBOOK} target="_blank" rel="noreferrer" className="block w-full text-center py-2.5 rounded-full border border-white/20 text-white font-medium hover:bg-white/10 transition">Facebook</a>
+          <a href={`https://wa.me/${WHATSAPP}`} className="flex w-full items-center justify-center gap-2 py-2.5 rounded-full bg-gradient-gold text-charcoal font-medium mb-2"><WhatsAppBrandIcon className="w-4 h-4" /> WhatsApp Us</a>
+          <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="flex w-full items-center justify-center gap-2 py-2.5 rounded-full border border-white/20 text-white font-medium hover:bg-white/10 transition mb-2"><InstagramBrandIcon className="w-4 h-4" /> Instagram</a>
+          <a href={FACEBOOK} target="_blank" rel="noreferrer" className="flex w-full items-center justify-center gap-2 py-2.5 rounded-full border border-white/20 text-white font-medium hover:bg-white/10 transition"><FacebookBrandIcon className="w-4 h-4" /> Facebook</a>
         </div>
       </div>
       <div className="border-t border-white/10">
@@ -743,12 +852,106 @@ function Footer() {
 function FloatingButtons() {
   return (
     <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
-      <a href={`https://wa.me/${WHATSAPP}`} aria-label="WhatsApp" className="grid place-items-center w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-luxe hover:scale-110 transition">
-        <MessageCircle className="w-6 h-6" />
+      <a href={`https://wa.me/${WHATSAPP}`} aria-label="WhatsApp" className="grid place-items-center w-14 h-14 rounded-full bg-card shadow-luxe hover:scale-105 transition border border-border/70">
+        <WhatsAppBrandIcon className="w-6 h-6" />
       </a>
-      <a href={`tel:${PHONE}`} aria-label="Call" className="grid place-items-center w-14 h-14 rounded-full bg-secondary text-primary shadow-luxe hover:scale-110 transition border border-border">
-        <Phone className="w-6 h-6" />
+      <a href={`tel:${PHONE}`} aria-label="Call" className="grid place-items-center w-14 h-14 rounded-full bg-card shadow-luxe hover:scale-105 transition border border-border/70">
+        <PhoneBrandIcon className="w-6 h-6" />
       </a>
     </div>
+  );
+}
+
+function FacebookBrandIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <circle cx="12" cy="12" r="10" fill="#1877F2" />
+      <path
+        fill="#FFFFFF"
+        d="M13.3 8.38h1.84V5.94c-.32-.04-1.42-.14-2.74-.14-2.71 0-4.56 1.65-4.56 4.69v2.12H5.5v2.72h2.34V22h2.86v-6.67h2.39l.38-2.72H10.7v-1.85c0-.79.22-1.32 1.35-1.32Z"
+      />
+    </svg>
+  );
+}
+
+function InstagramBrandIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <defs>
+        <linearGradient id="ig-gradient" x1="4" y1="20" x2="20" y2="4" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#F9CE34" />
+          <stop offset="0.32" stopColor="#EE2A7B" />
+          <stop offset="0.68" stopColor="#6228D7" />
+          <stop offset="1" stopColor="#4F5BD5" />
+        </linearGradient>
+      </defs>
+      <rect x="3" y="3" width="18" height="18" rx="5" fill="url(#ig-gradient)" />
+      <circle cx="12" cy="12" r="4.1" stroke="#FFFFFF" strokeWidth="1.8" />
+      <circle cx="17.2" cy="6.9" r="1.1" fill="#FFFFFF" />
+    </svg>
+  );
+}
+
+function GoogleMapsBrandIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path d="M12 21c3.83-4.57 5.75-7.8 5.75-10.02A5.75 5.75 0 1 0 6.25 10.98C6.25 13.2 8.17 16.43 12 21Z" fill="#34A853" />
+      <path d="M12 21c2.6-3.1 4.35-5.52 5.17-7.48h-4.48V21H12Z" fill="#4285F4" />
+      <path d="M6.83 13.52A22.7 22.7 0 0 0 12 21v-7.48H6.83Z" fill="#FBBC04" />
+      <path d="M17.73 10.5A5.75 5.75 0 0 0 12 5.23a5.74 5.74 0 0 0-5.73 5.27H17.73Z" fill="#EA4335" />
+      <circle cx="12" cy="10.75" r="2.35" fill="#FFFFFF" />
+    </svg>
+  );
+}
+
+function GoogleReviewsBrandIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path d="m12 3.3 2.19 4.44 4.9.72-3.55 3.46.84 4.88L12 14.47 7.62 16.8l.84-4.88L4.9 8.46l4.9-.72L12 3.3Z" fill="#FBBC04" />
+      <path d="M12 3.3 9.8 7.74l-4.9.72 3.56 3.46-.84 4.88L12 14.47V3.3Z" fill="#EA4335" fillOpacity="0.9" />
+      <path d="m12 14.47 4.38 2.33-.84-4.88 3.55-3.46-4.9-.72L12 3.3v11.17Z" fill="#4285F4" fillOpacity="0.92" />
+      <circle cx="12" cy="12" r="2.1" fill="#34A853" />
+    </svg>
+  );
+}
+
+function WhatsAppBrandIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path d="M20.52 11.96a8.47 8.47 0 0 1-12.49 7.43L3 20.98l1.67-4.9a8.48 8.48 0 1 1 15.85-4.12Z" fill="#25D366" />
+      <path d="M16.86 13.93c-.2-.1-1.18-.58-1.36-.64-.18-.07-.31-.1-.44.1-.13.19-.5.63-.62.76-.11.13-.22.14-.42.05a5.83 5.83 0 0 1-1.71-1.05 6.43 6.43 0 0 1-1.19-1.49c-.13-.22-.01-.33.09-.43.09-.08.2-.22.3-.34.1-.11.13-.19.2-.32.06-.13.03-.24-.02-.34-.05-.1-.44-1.08-.61-1.47-.16-.39-.32-.33-.44-.34l-.37-.01c-.13 0-.34.05-.52.24-.18.2-.68.67-.68 1.63s.7 1.89.8 2.02c.1.13 1.37 2.08 3.31 2.92.46.2.83.32 1.11.4.47.15.9.13 1.24.08.38-.06 1.18-.48 1.35-.95.17-.46.17-.86.12-.95-.05-.08-.18-.13-.38-.23Z" fill="#FFFFFF" />
+    </svg>
+  );
+}
+
+function PhoneBrandIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M6.62 4.72c.4-.4 1.02-.53 1.54-.34l1.93.72c.59.22.98.79.95 1.42l-.08 1.68c-.02.37.1.72.35 1a13.13 13.13 0 0 0 3.5 3.5c.28.24.63.37 1 .35l1.68-.08c.63-.03 1.2.36 1.42.95l.72 1.93c.2.52.06 1.14-.34 1.54l-1.29 1.29c-.74.74-1.82 1.03-2.84.77-2.02-.52-4.29-1.86-6.34-3.92-2.05-2.05-3.4-4.31-3.91-6.33-.27-1.03.03-2.11.77-2.85l1.28-1.28Z"
+        fill="#2F5F51"
+      />
+    </svg>
+  );
+}
+
+function MailBrandIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path d="M3.5 6.75A1.75 1.75 0 0 1 5.25 5h13.5c.97 0 1.75.78 1.75 1.75v10.5A1.75 1.75 0 0 1 18.75 19H5.25A1.75 1.75 0 0 1 3.5 17.25V6.75Z" fill="#FFFFFF" stroke="#DADCE0" />
+      <path d="M4.3 7.1 12 12.73 19.7 7.1" stroke="#EA4335" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4.3 17.2 9.2 12.95" stroke="#4285F4" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="m19.7 17.2-4.9-4.25" stroke="#34A853" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M4.3 7.1 7.25 9.24" stroke="#FBBC04" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function WebsiteBrandIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <circle cx="12" cy="12" r="9" stroke="#B8943A" strokeWidth="1.7" />
+      <path d="M3.7 12h16.6M12 3.2c2.07 2.22 3.25 5.42 3.25 8.8 0 3.37-1.18 6.57-3.25 8.8-2.07-2.23-3.25-5.43-3.25-8.8 0-3.38 1.18-6.58 3.25-8.8Z" stroke="#2F5F51" strokeWidth="1.5" />
+    </svg>
   );
 }
