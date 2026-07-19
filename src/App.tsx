@@ -255,7 +255,7 @@ function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-primary-foreground py-24">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-xs tracking-widest uppercase mb-6 animate-fade-up">
-          <span className="w-1.5 h-1.5 rounded-full bg-gold" /> Truesang Pvt. Ltd. Hospitality
+          <span className="w-1.5 h-1.5 rounded-full bg-gold" /> Truesang Hotel And Resort Pvt. Ltd.
         </div>
         <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-medium leading-[1.05] animate-fade-up" style={{ animationDelay: "0.1s" }}>
           Astha Midway
@@ -323,7 +323,7 @@ function About() {
             A refined pause on every <em className="text-gold not-italic">journey</em>.
           </h2>
           <p className="mt-6 text-muted-foreground leading-relaxed">
-            Astha Midway by Truesang Pvt. Ltd. brings together comfortable stays, thoughtfully maintained cottages,
+            Astha Midway by Truesang Hotel And Resort Pvt. Ltd. brings together comfortable stays, thoughtfully maintained cottages,
             destination dining, and event-friendly spaces within a scenic, garden-framed property setting.
           </p>
           <p className="mt-4 text-muted-foreground leading-relaxed">
@@ -769,7 +769,7 @@ function Footer() {
             <img src={truesangLogo} alt="Truesang Hotel & Resort logo" className="w-10 h-10 object-contain" />
             <span className="font-display text-xl text-white">Astha Midway</span>
           </div>
-          <p className="text-sm text-white/65 leading-relaxed">Stay, dine, celebrate, and connect in a polished garden-framed destination by Truesang Pvt. Ltd.</p>
+          <p className="text-sm text-white/65 leading-relaxed">Stay, dine, celebrate, and connect in a polished garden-framed destination by Truesang Hotel And Resort Pvt. Ltd.</p>
         </div>
         <div>
           <h4 className="text-white font-medium mb-4 text-sm tracking-widest uppercase">Quick Links</h4>
@@ -801,7 +801,7 @@ function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/55">
           <div>© {new Date().getFullYear()} Astha Midway. All rights reserved.</div>
-          <div>Powered by <span className="text-gold">Truesang Pvt. Ltd.</span></div>
+          <div>Powered by <span className="text-gold">Truesang Hotel And Resort Pvt. Ltd.</span></div>
         </div>
       </div>
     </footer>
